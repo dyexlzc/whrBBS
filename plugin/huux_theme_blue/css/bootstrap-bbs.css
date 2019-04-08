@@ -1,0 +1,293 @@
+@charset "UTF-8";
+/*!
+ * Bootstrap v4.0.0-beta.3 (https://getbootstrap.com)
+ * Copyright 2011-2017 The Bootstrap Authors
+ * Copyright 2011-2017 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+/****************************************   bbs 业务部分  ****************************************/
+/*.bg-dark { background-image: linear-gradient(0deg, $red, darken($red,10%)); }*/
+html, table {
+  font-size: 14px;
+}
+
+html, body {
+  font-family: 'Helvetica Neue', Helvetica, 'Microsoft Yahei', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', '微软雅黑', '华文细黑', STHeiti, sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* 页脚固定在底部 */
+#header, #body, #footer {
+  width: 100%;
+}
+
+#header {
+  flex: 0 0 auto;
+}
+
+#body {
+  flex: 1 0 auto;
+}
+
+#footer {
+  flex: 0 0 auto;
+}
+
+/* 蓝白主题风格 start */
+#header.bg-dark {
+  background-color: white !important;
+  box-shadow: 0 2px 2px rgba(233, 236, 239, 0.1);
+}
+
+#footer {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+
+#footer.bg-dark {
+  background-color: #fff !important;
+}
+
+#footer.bg-dark .text-muted {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.card {
+  box-shadow: 0 2px 2px rgba(233, 236, 239, 0.1);
+}
+
+.card-thread > .card-body > .media > a {
+  display: none;
+}
+
+.card-user-info > .text-center > a > .avatar-5 {
+  width: 4.572rem;
+  height: 4.572rem;
+  border-radius: 4.572rem;
+}
+
+.card-threadlist .card-body {
+  font-size: 16px;
+  padding: 0;
+}
+
+#header.navbar {
+  padding: 0;
+}
+
+#header.navbar .navbar-nav .nav-link {
+  padding: 1rem 1rem;
+}
+
+#header.navbar .navbar-nav .nav-link:hover {
+  color: #007bff;
+  background-color: rgba(0, 123, 255, 0.03);
+}
+
+#header.navbar .navbar-toggler {
+  padding: 1rem;
+  border-color: transparent !important;
+}
+
+#header.navbar .navbar-brand {
+  color: #000;
+}
+
+.nav-tabs .nav-link, .breadcrumb a, .card-user-info a {
+  color: #000;
+}
+
+.card-header-dropdown a {
+  color: #6c757d;
+}
+
+#header.navbar .logo-2 {
+  width: auto;
+}
+
+.postlist > .post > a {
+  margin-right: .5rem !important;
+}
+
+.postlist > .post > a > img.avatar-3 {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0 !important;
+  border-radius: 2rem;
+}
+
+.noticelist > .notice .message .reply-comment {
+  background-color: #f8fafe !important;
+}
+
+.noticelist > .notice .message .reply-comment:before {
+  border-color: #f8fafe !important;
+}
+
+/* 蓝白主题风格 end */
+#body > .container > .row > .col-lg-3 {
+  padding-left: 0;
+}
+
+.table th {
+  border-top: none;
+}
+
+.table > tbody > tr:first-child > td {
+  border-top: none;
+}
+
+.card {
+  margin-bottom: 1rem;
+}
+
+.breadcrumb .breadcrumb-item {
+  display: inline-flex;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.breadcrumb .breadcrumb-item a {
+  overflow: hidden;
+  max-width: 400px;
+  text-overflow: ellipsis;
+}
+
+.card-header-dropdown .dropdown-menu .dropdown-item i {
+  width: 12px;
+}
+
+/* 小屏: only small screen */
+@media (max-width: 576px) {
+  #body {
+    padding-top: .5rem;
+  }
+  #body > .container > .row > div {
+    padding: .5rem;
+  }
+  .postlist > .post > a {
+    margin-right: .5rem !important;
+  }
+  .postlist > .post > a > img.avatar-3 {
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 1.3rem;
+  }
+}
+
+/* 小屏 + 中屏: small + middle */
+@media (max-width: 992px) {
+  #nav {
+    padding-top: 1.5rem;
+    padding-left: .5rem;
+  }
+  #nav > ul:first-child > li:not(:first-child) {
+    padding-left: 3rem;
+  }
+}
+
+/* 中屏 + 大屏: middle + big */
+@media (min-width: 576px) {
+  #body {
+    padding-top: 1rem;
+  }
+}
+
+.addattach:hover {
+  font-weight: 800;
+}
+
+/*@teax 弥补bootstrap beta3的不足，分页如果过多则换行，防止超出屏幕*/
+.pagination {
+  flex-wrap: wrap;
+}
+
+table.nav_tag_list {
+  margin-bottom: .2rem;
+}
+
+table.nav_tag_list td {
+  padding: .1rem;
+}
+
+table.nav_tag_list td a {
+  margin-right: .5rem;
+}
+
+.nav_tag_list .active {
+  font-weight: 800;
+}
+
+@keyframes quote_animation {
+  from {
+    background-color: #28a745;
+  }
+  to {
+    background-color: #f8f9fa;
+  }
+}
+
+li.quote {
+  -webkit-animation: quote_animation 1s;
+  -moz-animation: quote_animation 1s;
+  -o-animation: quote_animation 1s;
+  animation: quote_animation 1s;
+  background-color: rgba(51, 149, 255, 0.03);
+  background-image: url(../../../view/img/quote.png);
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+
+.blockquote {
+  font-size: .8rem;
+  padding: .5rem 1rem !important;
+  background: rgba(51, 149, 255, 0.03);
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+
+.blockquote .user {
+  margin-right: .5rem;
+}
+
+.thread {
+  padding: 1rem .7rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.post {
+  padding: .7rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.threadlist > .thread:last-child, .postlist > .post:last-child {
+  border-bottom: 0;
+}
+
+.postlist .media-body {
+  width: 1%;
+}
+
+.message p {
+  line-height: 1.7;
+  margin: .2rem 0;
+}
+
+.message img {
+  max-width: 100%;
+  height: auto !important;
+}
+
+.thread .badge {
+  font-weight: normal;
+}
+
+.tag_option {
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+#message {
+  height: 2.4rem;
+  transition: height .2s ease;
+}

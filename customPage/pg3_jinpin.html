@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>精品分享</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+        <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+        <link rel="stylesheet" type="text/css" href="aui/css/aui.css" />
+        <script src="../view/js/jquery-3.1.0.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" src="aui/script/api.js"></script>
+        <script type="text/javascript" src="aui/script/aui-tab.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script src="../view/js/xiuno.js"></script>
+    </head>
+    
+    <body>
+        <div id="content">
+            <header class="aui-bar aui-bar-nav" style="background-color:#353F49">
+                <a class="aui-pull-left aui-btn">
+                    <a class="aui-pull-left aui-btn" @click="backA()" id="btnBack" style="display:none;"> <span class="aui-iconfont aui-icon-left"></span>返回</a>
+                </a>
+                <div class="aui-title">精品分享</div>
+            </header>
+            <section class="aui-content-padded">
+                <div class="aui-card-list">
+                    <div v-for="item,index in lists">
+                        <div class="aui-card-list-header aui-card-list-user" style="">
+                            <div class="aui-card-list-user-avatar"></div>
+                            <div class="aui-card-list-user-name" @click="goTo(index)">
+                                <div class="aui-text-info">{{ item.subject }}</div>
+                                <div class="aui-font-size-14 text-light">共有{{ item.views }}个小伙伴来看过~</div>
+                            </div>
+                            <div class="aui-card-list-user-info text-light">已有{{ item.likes }}个小伙伴点赞咯</div>
+                        </div>
+                        <!--<div class="aui-card-list-footer text-light aui-font-size-14 " tapmode @click="sendMsg(item.uid)">
+                            <div> <i class="aui-iconfont aui-icon-mail "></i>联系队友</div>
+                        </div>-->
+                    </div>
+                </div>
+                <!--<div class="aui-btn aui-btn-block aui-btn-warning" tapmode @click="getM()">刷新一批~</div>-->
+            </section>
+        </div>
+        <script>
+        
+        var vm_list=new Vue({
+            el:"#content",
+            data:{
+                lists:[]
+            },
+            methods:{
+                getM:function(){
+                    $.post("http://whrhost.tk/whr/bbs/custompage/getjinhua.php",function(result){
+                        console.log(eval(result));
+                        vm_list.$data.lists=eval(result);
+                    })
+                },
+                goTo:function(id){
+                    window.location.href=this.lists[id].uri;
+                }
+            }
+        })
+        vm_list.getM();
+        </script>
+    </body>
+
+</html>

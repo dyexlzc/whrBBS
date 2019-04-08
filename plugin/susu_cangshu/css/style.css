@@ -1,0 +1,8 @@
+﻿.updown {
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+}
+.updown a {
+    padding: 0.25rem 0;
+}

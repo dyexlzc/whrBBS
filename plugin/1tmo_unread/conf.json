@@ -1,0 +1,14 @@
+{
+    "name": "Tmo - 已读未读",
+    "brief": "未查看主题显示闪烁光点。<br># QQ交流群: <span style='color:#177f2e;'>66706260</span><br># 使用问题、交流 <a href='http://www.tmopal.com'  target='_blank'><span style='color:red;'><b>www.tmopal.com</b></span></a>",
+    "version": "1.0.2",
+    "bbs_version": "4.0",
+    "installed": 1,
+    "enable": 1,
+    "hooks_rank": [
+
+    ],
+    "dependencies": [
+
+    ]
+}

@@ -1,0 +1,47 @@
+/*********************** Plugin: 1tmo_unread v1.0.1 & www.tmopal.com ***********************/
+
+.kylinde.unread {
+    display: inline-block;
+    margin-bottom: 1px;
+    margin-right: 8px;
+    border-radius: 12px;
+    width: 6px;
+    height: 6px;
+    -webkit-animation: flickerAnimation 3s infinite;
+    -moz-animation: flickerAnimation 3s infinite;
+    -o-animation: flickerAnimation 3s infinite;
+    animation: flickerAnimation 3s infinite;
+}
+
+@keyframes flickerAnimation {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0.1; }
+  100% {
+    opacity: 1; } }
+
+@-o-keyframes flickerAnimation {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0.1; }
+  100% {
+    opacity: 1; } }
+
+@-moz-keyframes flickerAnimation {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0.1; }
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes flickerAnimation {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0.1; }
+  100% {
+    opacity: 1; } }
+

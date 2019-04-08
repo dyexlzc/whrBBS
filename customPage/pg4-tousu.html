@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>投诉</title>
+        <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+        <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+        <link rel="stylesheet" type="text/css" href="aui/css/aui.css" />
+        <script src="../view/js/jquery-3.1.0.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" src="aui/script/api.js"></script>
+        <script type="text/javascript" src="aui/script/aui-tab.js"></script>
+        <script type="text/javascript" src="aui/script/aui-toast.js" ></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    </head>
+    
+    <body>
+        
+        <div class="aui-content aui-margin-b-15">
+        <ul class="aui-list aui-form-list" id="content">
+            <li class="aui-list-header">维护社区，需要您的帮助！</li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-label">
+                        投诉类型
+                    </div>
+                    <div class="aui-list-item-input">
+                        <select >
+                            <option>暴力</option>
+                            <option>广告</option>
+                            <option>诈骗</option>
+                            <option>政治相关，反动</option>
+                        </select>
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-label">
+                       证据地址
+                    </div>
+                    <div class="aui-list-item-input">
+                        <input type="text" placeholder="uri地址，粘贴" >
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item" >
+                <div class="aui-list-item-inner" style="padding-right:15px">
+                    <div class="aui-list-item-label">
+                        具体内容
+                    </div>
+                    <div class="aui-list-item-input" style="height:300px;border:1px solid #5B5360;">
+                        <textarea placeholder="具体填写，稍后会核实后做出反馈!" rows="10"></textarea>
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner aui-list-item-center aui-list-item-btn">
+                    <div class="aui-btn aui-btn-danger aui-margin-r-5" @click="onSubmit_">举报</div>
+                    <!--<div class="aui-btn aui-btn-danger aui-margin-l-5">取消</div>-->
+                </div>
+            </li>
+        </ul>
+    </div>
+    <script>
+    var toast = new auiToast();
+        var vm1=new Vue({
+            el:"#content",
+            data:{
+                
+            },
+            methods:{
+                onSubmit_:function(){
+                    toast.success({
+                        title:"投诉收到，我们将如实处理",
+                        duration:2000
+                    });
+                }
+            }
+        })
+    </script>
+    </body>
+</html>

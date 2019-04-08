@@ -1,0 +1,45 @@
+<style>
+  #search_form {
+			width: 250px;
+            height: 28px;
+			display: inline-block;
+			position: relative;
+			padding: 0px;
+		}
+		
+		#search_form>input {
+			    border-radius: 50px;
+			    width: 250px;
+                height: 28px;
+			    display: inline-block;
+			    text-indent: 10px;
+			    background: #f8f9fa;
+			    color: #748290;
+			    border: 1px solid #23b27e;
+			    padding: 2px !important;
+			    font-size: 12.5px;
+			    margin-top: 0px;
+			    outline: 0;
+		}
+		
+		#search_form>input:focus {
+			background-color: #f0f3f5;
+		}
+		
+		#search_form>input::-webkit-input-placeholder {
+			color: #23b27e;
+		}
+		
+		#search_form>span.icon-search {
+			position: absolute;
+			left: 225px;
+			top: 2px;
+			line-height: 25px;
+		}
+
+</style>
+<form action="<?php echo url('search');?>" id="search_form">
+<input type="text" placeholder="输入关键词 按回车键搜索" name="keyword">
+<span class="icon-search text-qimeng-search"></span>
+</form>
+

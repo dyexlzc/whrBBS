@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>推荐队友</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+        <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+        <link rel="stylesheet" type="text/css" href="aui/css/aui.css" />
+        <script src="../view/js/jquery-3.1.0.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" src="aui/script/api.js"></script>
+        <script type="text/javascript" src="aui/script/aui-tab.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script src="school.js"></script>
+    </head>
+    
+    <body>
+
+        <div id="content">
+
+                <header class="aui-bar aui-bar-nav" style="background-color:#353F49">
+                    <a class="aui-pull-left aui-btn">
+                        <a class="aui-pull-left aui-btn" @click="backA()" id="btnBack" style="display:none;">
+                                <span class="aui-iconfont aui-icon-left"></span>返回
+                            </a>
+                    </a>
+                    <div class="aui-title">队友推荐</div>
+                </header>
+            
+            <div id="content2">
+                <div class="aui-content aui-margin-b-15">
+                <ul class="aui-list aui-form-list">
+                    <li class="aui-list-item">
+                        <div class="aui-list-item-inner">
+                            <div class="aui-list-item-label">
+                                学校
+                            </div>
+                            <div class="aui-list-item-input">
+                                <select class="custom-select" v-model="provinceSelected" @change="getProvinceSelected()">
+                                    <option  v-for="prov,index in provinceList" >{{prov}}</option> 
+                                </select>
+                                <select class="custom-select" v-model="schoolSelected" @change="getSchoolSelected()">
+                                     <option  v-for="prov in schoolList" >{{prov}}</option> 
+                                </select>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="aui-list-item">
+                        <div class="aui-list-item-inner">
+                            <div class="aui-list-item-label">
+                                专业
+                            </div>
+                            <div class="aui-list-item-input">
+                            <select v-model="major" @change="getMajorSelected()">
+                                <option value="0">【所有】</option>
+                                <option value="1">哲学</option>
+    							<option value="2">经济学</option>
+    							<option value="3">历史学</option>
+    							<option value="4">历史学</option>
+    							<option value="5">法学</option>
+    							<option value="6">马克思主义理论</option>
+    							<option value="7">社会学</option>
+    							<option value="8">政治学</option>
+    							<option value="9">公安学</option>
+    							<option value="10">教育学</option>
+    							<option value="11">体育学</option>
+    							<option value="12">职业技术教育</option>
+    							<option value="13">新闻传播学</option>
+    							<option value="14">中国语言文学</option>
+    							<option value="15">外国语言文学</option>
+    							<option value="16">艺术</option>
+    							<option value="17">数学</option>
+    							<option value="18">物理学</option>
+    							<option value="19">化学</option>
+    							<option value="20">生物科学</option>
+    							<option value="21">天文学</option>
+    							<option value="22">地理科学</option>
+    							<option value="23">地球物理学</option>
+    							<option value="24">大气科学</option>
+    							<option value="25">海洋科学</option>
+    							<option value="26">力学</option>
+    							<option value="27">农业工程</option>
+    							<option value="28">环境科学</option>
+    							<option value="29">心理学</option>
+    							<option value="30">统计学</option>
+    							<option value="31">系统科学</option>
+    							<option value="32">地矿</option>
+    							<option value="33">机械</option>
+    							<option value="34">仪器仪表</option>
+    							<option value="35">能源动力</option>
+    							<option value="36">电气信息</option>
+    							<option value="37">土建</option>
+    							<option value="38">测绘</option>
+    							<option value="39">环境与安全</option>
+    							<option value="40">化工与制药</option>
+    							<option value="41">交通运输</option>
+    							<option value="42">海洋工程</option>
+    							<option value="43">航空航天</option>
+    							<option value="44">武器</option>
+    							<option value="45">工程力学</option>
+    							<option value="46">生物工程</option>
+    							<option value="47">公安技术</option>
+    							<option value="48">材料科学</option>
+    							<option value="49">材料</option>
+    							<option value="50">水利</option>
+    							<option value="51">林业工程</option>
+    							<option value="52">轻工纺织食品</option>
+    							<option value="53">电子信息科学</option>
+    							<option value="54">植物生产</option>
+    							<option value="55">草业科学</option>
+    							<option value="56">森林资源</option>
+    							<option value="57">环境生态</option>
+    							<option value="58">动物生产</option>
+    							<option value="59">动物医学</option>
+    							<option value="60">水产</option>
+    							<option value="61">基础医学</option>
+    							<option value="62">预防医学</option>
+    							<option value="63">药学</option>
+    							<option value="64">口腔医学</option>
+    							<option value="65">中医学</option>
+    							<option value="66">法医学</option>
+    							<option value="67">护理学</option>
+    							<option value="68">临床医学与医学技术</option>
+    							<option value="69">工商管理</option>
+    							<option value="70">管理科学与工程</option>
+    							<option value="71">公共管理</option>
+    							<option value="72">农业经济管理</option>
+    							<option value="73">图书档案学</option>
+                            </select>
+                        </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+           
+            
+            <section class="aui-content-padded" >
+                <div class="aui-card-list">
+                    <div v-for="item in items" >
+                        <div class="aui-card-list-header aui-card-list-user" style="">
+                            <div class="aui-card-list-user-avatar">
+                                
+                            </div>
+                            <div class="aui-card-list-user-name">
+                                <div class="aui-text-info">{{ item.realname }}</div>
+                                <div class="aui-font-size-14 text-light">{{ item.major  }}</div>
+                            </div>
+                            <div class="aui-card-list-user-info text-light">{{ item.school }}</div>
+                        </div>
+                        <div class="aui-card-list-content-padded aui-padded-t-5 aui-padded-b-5">{{ item.other }}</div>
+    
+                        <div class="aui-card-list-footer text-light aui-font-size-14 " tapmode @click="sendMsg(item.uid)">
+                                <div> <i class="aui-iconfont aui-icon-mail " ></i>联系队友</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="aui-btn aui-btn-block aui-btn-warning" tapmode @click="getM()">刷新一批~</div>
+            </section>
+            </div>
+        </div>
+        <script>
+            
+           
+            $(document).ready(function(){
+                
+                var vm_list=new Vue({
+                el:"#content",
+                data:{
+                    items:[],
+                    urlFrame:"",
+                    provinceSelected:"",
+                    provinceList:provinceArr,
+                    schoolList:[],
+                    schoolSelected:"",
+                    major:""
+                    
+                },
+                created(){
+                    this.provinceSelected=this.provinceList[0];
+                },
+                methods:{
+                    getM:function(){
+                        //从getMember中随机获取队友信息，给予用户展示并且联系,其中要加上学校和专业的限定信息
+                        $.post("pg2-getMember.php",{major:vm_list.$data.major,school:vm_list.$data.schoolSelected,province:vm_list.$data.provinceSelected},function(result){//将学校和专业传入动态生成 
+                           console.log("专业:"+vm_list.$data.major);
+                           console.log("省份:"+vm_list.$data.provinceSelected);
+                           console.log("学校:"+vm_list.$data.schoolSelected);
+                           vm_list.$data.items=eval(result); 
+                           console.log(result);
+                        });
+                        
+                        
+                    },
+                    sendMsg:function(uid){
+                        //发送消息的逻辑，会进入到队友的详情页。
+                        //window.location.href=
+                        this.urlFrame="http://whrhost.tk/whr/bbs/?user-"+uid+".htm";
+                        $("#iframepage2").toggle();
+                        $("#content2").toggle();
+                        $("#btnBack").toggle();
+                    },
+                    backA:function(){
+                        $("#iframepage2").toggle();
+                        $("#content2").toggle();
+                        $("#btnBack").toggle();
+                    },
+                    checkStr:function(str){
+                        return str==this.provinceSelected;//查找元素
+                    },
+                    getSchoolSelected:function(){
+                        console.log(this.schoolSelected);
+                        this.getM();
+                    },
+                    getProvinceSelected:function(){
+                        console.log(this.provinceSelected);
+                        //省市变化以后更新下面的学校列表
+                        this.schoolList=cityArr[ this.provinceList.findIndex(this.checkStr,this.provinceSelected)-1 ];
+                    },
+                    getMajorSelected:function(){//修改专业
+                        console.log(this.major);
+                        this.getM();
+                    }
+                }
+                
+            });
+                //vm_list.getM();
+                vm_list.$data.major=0;
+                vm_list.$data.schoolList=cityArr[0];//默认为北京市的大学
+                vm_list.$data.schoolSelected=vm_list.$data.schoolSelected[1];//直接更新学校列表
+                vm_list.$data.provinceSelected=vm_list.$data.provinceList[0];//默认为所有大学
+            })
+
+        </script>
+        
+
+    </body>
+
+</html>

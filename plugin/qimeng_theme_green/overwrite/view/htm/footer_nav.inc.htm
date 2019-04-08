@@ -1,0 +1,16 @@
+<footer class="text-muted small bg-dark py-4 mt-3" id="footer">
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<!--{hook footer_footer_left_start.htm}-->
+				<span class="qmfooter">Powered by</span> <a href="http://bbs.xiuno.com/" target="_blank" class="qmfooter">Xiuno BBS <span><?php echo $conf['version'];?></span></a>
+                  <!--{hook footer_footer_left_end.htm}-->
+			</div>
+			<div class="col text-right">
+				<!--{hook footer_footer_right_start.htm}-->
+				<span class="qmfooter">Processed: <?php echo substr(microtime(1) - $starttime, 0, 5);?>, SQL: <?php echo count($db->sqls);?></span>
+				<!--{hook footer_footer_right_end.htm}-->
+			</div>
+		</div>
+	</div>
+</footer>

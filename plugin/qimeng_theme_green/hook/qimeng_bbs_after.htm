@@ -1,0 +1,30 @@
+<div class="card pa-sm hidden-xs hidden-sm hidden-md">
+	<div class="card-body">
+		<dl class="row">
+			<dt style="width: 70px" class="vtop">
+				<img src="<?php echo $forum['icon_url'];?>" width="60" height="60" class="forum_icon" />
+				</dt>
+				<dd class="vtop">
+					<div class="text-small">
+						<span style="font-size: 15px;" class="font-weight-bold"><?php echo $forum['name'];?></span>　
+						<span><span class="text-grey text-small"><?php echo lang('threads');?>：</span><?php echo $forum['threads'];?></span>　
+						<span><span class="text-grey text-small"><?php echo lang('today_threads');?>：</span><?php echo $forum['todaythreads'];?></span>　
+                        <span><span class="text-grey text-small"><?php echo lang('today_posts');?>：</span><?php echo $forum['todayposts'];?></span>　
+					</div>                 
+		<div class="text-middle text-muted" style="line-height: 2;"><?php echo $forum['brief'];?></div>
+        <?php if($forum['announcement'] || $forum['modlist']) { ?>
+	    <?php if($forum['announcement']) { ?>
+		<span class="icon-volume-up"></span> <?php echo lang('forum_anouncement');?>：<?php echo $forum['announcement'];?><?php  } ?>						
+						
+	<?php if($forum['modlist']) { ?>
+	<div class="text-small" style="line-height: 3"><span class="text-qimeng-grey"><?php echo lang('forum_moderator');?>：</span>
+	<?php foreach ($forum['modlist'] as $mod) { ?>
+	<a href="<?php echo url("user-$mod[uid]");?>" class="text-qimeng-grey"><img src="<?php echo $mod['avatar_url'];?>" class="avatar-1"> <?php echo $mod['username'];?><i class="text-qimeng-icon-v<?php echo $mod['uid'];?>"></i></a> &nbsp;
+		<?php } ?>
+       </div>					
+      <?php  } ?>
+	<?php  } ?>							
+				</dd>
+			</dl>
+		</div>
+	</div>

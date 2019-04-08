@@ -1,0 +1,315 @@
+@charset "UTF-8";
+/*!
+ * RedXN - V1.0 2018-11-30
+ * tmopal - www.tmopal.com
+ */
+/****************************************   bbs 业务部分  ****************************************/
+.bg-dark {
+  /* background-color: #fff !important ; */
+  background-image: linear-gradient(0deg, #fff, #ddd);
+}
+#footer.bg-dark{
+    background-color:transparent !important
+
+}
+.sakya_logo{
+  background:url(../images/logo.png);
+  width:3rem;
+  height: 3rem;
+  background-size: cover;
+}
+html, table {
+  font-size: 14px;
+}
+
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: "Helvetica Neue", Helvetica, "Microsoft Yahei", "Hiragino Sans GB", "WenQuanYi Micro Hei", "微软雅黑", "华文细黑", STHeiti, sans-serif;
+}
+
+/* 页脚固定在底部 */
+#header, #body, #footer {
+  width: 100%;
+}
+
+#header {
+  flex: 0 0 auto;
+}
+
+#body {
+  flex: 1 0 auto;
+  background:url(../images/shadow.png) repeat-x
+}
+
+#footer {
+  flex: 0 0 auto;
+}
+
+#body > .container > .row > .col-lg-3 {
+  padding-left: 0;
+}
+
+.table th {
+  border-top: none;
+}
+
+.table > tbody > tr:first-child > td {
+  border-top: none;
+}
+
+.card {
+  margin-bottom: 1rem;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1)
+}
+
+.breadcrumb .breadcrumb-item {
+  display: inline-flex;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.breadcrumb .breadcrumb-item a {
+  max-width: 400px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-header-dropdown .dropdown-menu .dropdown-item i {
+  width: 12px;
+}
+
+/* 小屏: only small screen */
+@media (max-width: 576px) {
+  #body {
+    padding-top: 0.5rem;
+  }
+  #body > .container > .row > div {
+    padding: 0.5rem;
+  }
+}
+
+/* 小屏 + 中屏: small + middle */
+@media (max-width: 992px) {
+  #nav {
+    padding-top: 1.5rem;
+    padding-left: 0.5rem;
+  }
+  #nav > ul:first-child > li:not(:first-child) {
+    padding-left: 3rem;
+  }
+}
+
+/* 中屏 + 大屏: middle + big */
+@media (min-width: 576px) {
+  #body {
+    padding-top: 1.3rem;
+  }
+}
+
+.addattach:hover {
+  font-weight: 800;
+}
+
+/*@teax 弥补bootstrap beta3的不足，分页如果过多则换行，防止超出屏幕*/
+.pagination {
+  flex-wrap: wrap;
+}
+
+table.nav_tag_list {
+  margin-bottom: 0.2rem;
+}
+
+table.nav_tag_list td {
+  padding: 0.1rem;
+}
+
+table.nav_tag_list td a {
+  margin-right: 0.5rem;
+}
+
+.nav_tag_list .active {
+  font-weight: 800;
+}
+
+@keyframes quote_animation {
+  from {
+    background-color: #39954e;
+  }
+  to {
+    background-color: #f8f9fa;
+  }
+}
+
+li.quote {
+  background-color: #e9ecef;
+  animation: quote_animation 1s;
+  -moz-animation: quote_animation 1s;
+  -webkit-animation: quote_animation 1s;
+  -o-animation: quote_animation 1s;
+  background-image: url(../../../view/img/quote.png);
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+
+.blockquote {
+  font-size: 0.8rem;
+  background: #e9ecef;
+  background-repeat: no-repeat;
+  background-position: top right;
+  padding: 0.5rem 1rem !important;
+}
+
+.blockquote .user {
+  margin-right: 0.5rem;
+}
+
+.thread, .post {
+  border-bottom: 1px solid #e9ecef;
+  padding: 0.7rem;
+}
+
+.thread:hover {
+  background-color: #f8f9fa;
+}
+
+.postlist > .post:last-child {
+  border-bottom: 0px;
+}
+
+.postlist .media-body {
+  width: 1%;
+}
+
+.message p {
+  margin: 0.2rem 0;
+  line-height: 1.7;
+}
+
+.message img {
+  max-width: 100%;
+  height: auto !important;
+}
+
+.thread .badge {
+  font-weight: normal;
+}
+
+.tag_option {
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+/* 回帖输入框 */
+#message {
+  height: 2.4rem;
+  transition: height 0.2s;
+}
+
+#footer {
+  color:#666 !important;
+}
+
+.bg-dark .text-muted {
+  color: #666 !important;
+}
+
+/* add by sakya*/
+.navbar-nav{flex-wrap: wrap}
+.card-threadlist .card-body,.card-thread .card-body{
+  flex: 1 1 auto;
+  padding: 0 0 1.25rem 0;
+  background: #f5f5f5
+}
+.card-threadlist .card-body ul{
+  background: #fff
+}
+
+.card-threadlist .card-body .message{background:#fff;padding:1.25rem;}
+.card-threadlist .card-body hr{margin:0}
+
+.btn-secondary:hover{
+  background-color:#923636;
+  border-color:#923636
+}
+.btn-primary{
+  background-color:#923636;
+  border-color:#923636
+}
+.btn-primary:hover{
+  background-color:#b14444;
+  border-color:#b14444
+}
+.navbar-dark .navbar-nav .nav-link{
+  padding:.15rem .5rem;
+  border-radius:5px;
+  margin-right:4px;
+  white-space: nowrap;
+  transition-duration: .3s
+}
+.card-body.small ul,.card-body.small li{padding:0;margin:0;list-style: none;font-size:100%}
+.nav-tabs .nav-link.active{
+  background-color:#fff
+}
+.nav-tabs .nav-item{
+  margin-left:5px;
+  margin-bottom:-2px;
+}
+.card-header{
+  background-image: linear-gradient(0deg, #fff, #eee);
+  border-bottom:1px solid #e9ecef
+}
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link{
+  border-color:#e9ecef
+}
+
+.navbar-toggler-icon{
+  color:#000
+}
+.navbar-dark .navbar-brand{
+  color:#751f1f
+}
+
+.navbar-dark .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(117, 31, 31, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+.thread_tbox{
+    background-image: linear-gradient(0deg, #fff, #f9f9f9);
+padding:1.25rem;}
+
+.card-thread .media{
+  padding:1.2rem;
+}
+.card-thread .card-body hr{margin:0}
+.card-thread .card-body .message{background:#fff;padding:1.25rem;}
+
+.w-100 tr{
+  display: flex
+}
+
+.w-100 td{
+  flex-grow: 1;
+  width:0;
+  border-right:1px solid #ccc;
+}
+.card-postlist .card-body{
+  padding:0
+}
+.card-postlist .card-title{
+  padding:0.8rem 1.2rem;
+  border-bottom:1px solid #e9ecef;
+  background: #f5f5f5;
+  margin-bottom:0;
+}
+.card-postlist .card-body .postlist>li{
+  /* min-height: 9rem; */
+}
+.plugin_pay-child{transition: all 0.5s;}
+.plugin_pay-child img{cursor: pointer;transition: all 0.5s;}
+.plugin_pay-child:hover img{transform: scale(1.2);}
+.plugin_pay-child:hover{box-shadow:0px 3px 5px rgba(0, 0, 0, 0.5)}
+.plugin_pay_pic{overflow:hidden;display:flex;align-items:center;}
+@media (max-width: 576px) {
+	.plugin_pay{padding:.25rem;}
+	.plugin_pay>li{padding:0 0.5rem}
+}

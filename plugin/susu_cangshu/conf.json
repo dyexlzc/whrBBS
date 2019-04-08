@@ -1,0 +1,10 @@
+{
+    "name": "喂养仓鼠",
+    "brief": "主页和帖子页右侧侧边栏增加一个喂养仓鼠的游戏<br>让你的网站更有趣<br>；",
+    "version": "1.1",
+    "bbs_version": "4.0.4",
+    "installed": 0,
+    "enable": 0,
+    "hooks_rank": [],
+    "dependencies": []
+}

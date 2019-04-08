@@ -1,0 +1,58 @@
+<?php include _include(ADMIN_PATH.'view/htm/header.inc.htm');?>
+
+<div class="row">
+	<div class="col-lg-10 offset-lg-1">
+		<div class="card">
+				  <div class="card-header"><i class="icon-cog"></i> Tmo - 已读未读</div>
+			<div class="card-body">
+			 <div class="alert alert-warning">
+			      官方网站：<a style="color: red;" href="http://www.tmopal.com" target="_blank" style="text-decoration: none"><b>www.tmopal.com</b></a><br>
+                  作者QQ：626567678<br>
+		          QQ交流分享群：66706260  <a target='_blank' href='//jq.qq.com/?_wv=1027&k=5782bjR'><img border='0' src='//pub.idqqimg.com/wpa/images/group.png' alt='xiuno插件-tmopal.com' title='Tmall-tmopal.com'></a><br>
+		          <b>投稿Email:</b>help@tmopal.com
+			 </div>
+			 
+			<div class="card-body">
+				<form action="<?php echo url("plugin-setting-1tmo_unread");?>" method="post" id="form">
+					<div class="form-group row">
+						<label class="col-sm-2 form-control-label">颜色：</label>
+						<div class="col-sm-10">
+							<?php echo $input['kylinde_unread_color'];?>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-sm-2 form-control-label"></label>
+						<div class="col-sm-10">
+							<button type="submit" class="btn btn-primary btn-block" id="submit" data-loading-text="<?php echo lang('submiting');?>..."><?php echo lang('confirm');?></button>
+							<a role="button" class="btn btn-secondary btn-block m-t-1" href="javascript:history.back();"><?php echo lang('back');?></a>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<?php include _include(ADMIN_PATH.'view/htm/footer.inc.htm');?>
+
+<script>
+var jform = $("#form");
+var jsubmit = $("#submit");
+var referer = '<?php echo http_referer();?>';
+jform.on('submit', function(){
+	jform.reset();
+	jsubmit.button('loading');
+    var postdata = jform.serialize();
+	$.xpost(jform.attr('action'), postdata, function(code, message) {
+		if(code == 0) {
+			$.alert(message);
+			jsubmit.text(message).delay(2000).button('reset').location(referer);
+			return;
+		} else {
+			$.alert(message);
+			jsubmit.button('reset');
+		}
+	});
+	return false;
+});
+</script>

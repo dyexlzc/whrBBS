@@ -1,0 +1,163 @@
+<style>
+/*自定义全站通用*/  
+body { background: #e9ecef !important; !important; background-repeat: no-repeat !important;}
+#header { background: #23b27e !important; }
+#footer { background: #23b27e !important; }
+.card > .card-header { background-image: linear-gradient(0deg, #f8f9fa, #f8f9fa); }
+.card { background: #f8f9fa !important; }
+.thread:hover { background-color: #f8f9fa !important; }
+.text-grey { color: rgba(134, 142, 150, 0.8)  !important;}
+.text-qimeng-grey { color: rgba(150, 158, 167, 1)  !important;}
+.thread, .post { border-bottom: 1px solid #e9ecef;}
+.input-group .form-control, .input-group .custom-select, .input-group .custom-file { background: rgba(255,255,255,0.7);}
+.card-header-tabs > .nav-item > .nav-link.active { background-image: linear-gradient(0deg, #f8f9fa, #f8f9fa); border-color: #e3e4e4; border-bottom-color: #f8f9fa;}
+.nav_tag_list a { color: #23b27e; }
+/*自定义icon*/  
+.text-qimeng-icon-1 { color: #abb745 !important;}
+.text-qimeng-icon-3 { color: #23b27e !important;}
+.text-qimeng-icon-xz { color: #3dc7f5 !important;}
+.text-qimeng-search { color: #23b27e !important;}
+  
+.btn-secondary { background-color:#23b27e; border-color:#23b27e; }
+.btn-secondary:hover { background-color: #32cc94; border-color: #32cc94; }
+.blockquote {
+  font-size: 0.8rem;
+  background-color: #e9ecef;
+  background-image: url(/plugin/qimeng_theme_green/static/img/quote.png);
+  background-repeat: no-repeat;
+  background-position: top right;
+  padding: 0.5rem 1rem !important;
+}
+  
+.fieldset {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #dee2e6;
+  border-radius: 2px;
+  background: #f8f9fa;
+}
+.fieldset > legend {
+  width: auto;
+  padding: 0px 16px;
+  font-size: 1rem;
+  font-weight: 400;
+  border-radius: 2px;
+  color: #9cab24;
+  background: #e9ecef;
+}
+  
+.page-qimeng {
+  position: relative;
+  display: block;
+  padding: 0.4rem 0.75rem;
+  margin-left: -1px;
+  line-height: 1;
+  color: #23b27e;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+}
+.page-qimeng:hover {
+  color: #23b27e;
+  text-decoration: none;
+  background-color: #f8f9fa;
+  border-color: #dee2e6;
+}
+/*自定义发帖按钮*/
+.qimeng_btn_fatie {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    margin-bottom: 0.5rem !important;
+    border: 1px solid #e9ecef;
+    padding: 0.75rem 0.75rem;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+/*自定义版块栏*/
+.qimeng_btn {
+  border: 1px solid transparent;
+  margin-top: 0.2rem;
+  font-size: 1rem;
+}
+dl.row, ul.row {
+	display: table;
+	width: 100% !important;
+	clear: both;
+}
+
+dl.row, dl.row > dt, dl.row > dd, ul.row, ul.row > li {
+	margin: 0px;
+	padding: 0px;
+}
+
+dl.row > dt, dl.row > dd, ul.row > li {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+dl.row > dt, dl.row > dd, ul.row > li {
+	list-style: none;
+	min-height: 1.6rem;
+}
+
+dl.row > dt, dl.row > dd {
+	width: auto;
+}
+
+dl.row > dt {
+	font-weight: normal;
+}
+
+ul.row.vtop > li, ul.row > li.vtop {
+	vertical-align: top;
+}
+
+dl.row.vtop > dt, dl.row.vtop > dd, dl.row > dt.vtop, dl.row > dd.vtop {
+	vertical-align: top;
+}
+
+ul.row.vbottom > li, ul.row > li.vbottom {
+	vertical-align: bottom;
+}
+
+dl.row.vbottom > dt, dl.row.vbottom > dd, dl.row > dt.vbottom, dl.row > dd.vbottom {
+	vertical-align: bottom;
+}
+/*自定义标签*/
+table.qimeng_tag {
+  background-color: #f8f9fa !important;
+  border: 1px solid #dadbdc;
+  box-shadow: 1px 1px 2px rgba(233, 236, 239, 0.25);
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.5rem 1rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+  list-style: none;
+  border-radius: 0.25rem;
+}
+.qimeng_option {
+        border: 1px solid #c0c3c5; padding: 1px 10px; border-radius: 10px; text-decoration: none;
+}
+.qimeng_option:active, .tag_option.active {
+        border: 1px solid #23b27e; background: #23b27e; color: #fff; text-decoration: none;
+}
+/*自定义排序*/
+.icon-orderby {width: 16px; height: 16px; display: -moz-inline-stack; display: inline-block; *display:inline; /* IE7 */ zoom:1; /* IEç³»åˆ—*/ overflow: hidden; vertical-align: middle; _vertical-align: middle; _margin-left: 1px;  *margin-left: 1px; background: url(plugin/qimeng_theme_green/static/img/orderby.gif) no-repeat; pointer: normal;} /* å¯ä»¥ç”¨äºŽ<a> <span> */
+.icon-orderby:hover {}
+.icon-orderby-tid { background-position: 0px 0px; }
+.icon-orderby-tid-active { background-position: -16px 0px; }
+.icon-orderby-lastpid { background-position: -32px 0px; }
+.icon-orderby-lastpid-active { background-position: -48px 0px; }
+/*自定义图像*/
+.qimeng_avatar-3 {
+  width: 3.3rem;
+  height: 3.3rem;
+  border-radius: 3.3rem;
+}
+</style>

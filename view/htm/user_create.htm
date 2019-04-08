@@ -1,0 +1,322 @@
+<?php include _include(APP_PATH.'view/htm/header.inc.htm');?>
+
+<!--{hook user_create_start.htm}-->
+
+<div class="row">
+	<div class="col-lg-6 mx-auto">
+		<!--{hook user_create_card_before.htm}-->
+		<div class="card">
+			<div class="card-header">
+				<?php echo lang('user_create');?>
+				<!--{hook user_create_title_after.htm}-->
+			</div>
+			<div class="card-body">
+				<form action="<?php echo url('user-create');?>" method="post" id="form">
+				
+					<div class="form-group input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="icon icon-envelope icon-fw"></i></span>
+						</div>
+						<input type="email" class="form-control" placeholder="<?php echo lang('email');?>" name="email" id="email" required>
+					</div>
+					
+					<!--{hook user_create_email_after.htm}-->
+					
+					<div class="form-group input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="icon icon-user icon-fw"></i></span>
+						</div>
+						<input type="text" class="form-control" placeholder="<?php echo lang('username');?>" name="username" id="username">
+					</div>
+					
+					<!--{hook user_create_username_after.htm}-->
+					
+					<div class="media">
+						<div class="media-body">
+							<div class="form-group input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i class="icon icon-lock icon-fw"></i></span>
+								</div>
+								<input type="password" class="form-control" placeholder="<?php echo lang('password');?>" name="password" id="password">
+							</div>
+						</div>
+					</div>
+
+					<div class="media">
+						<div class="media-body">
+							<div class="form-group input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i class="icon icon-lock icon-fw"></i></span>
+								</div>
+								<textarea class="form-control" placeholder="队友宣言" name="other" id="other"></textarea>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="icon icon-user icon-fw"></i></span>
+						</div>
+						<input type="text" class="form-control" placeholder="真实姓名" name="realname" id="realname">
+					</div>
+
+					<div class="form-group input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text">性别</span>
+						</div>
+						<select  class="custom-select" name="sex" >
+							<option value="1">男</option>
+							<option value="2">女</option>
+						</select>
+					</div>
+
+					<div class="form-group input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text">学校</span>
+						</div>
+						<select class="custom-select" name="province" id="province">
+							<option value="省份" selected="selected">省份</option>
+						</select>
+						<select class="custom-select" name="city" id="city">
+								<option value="学校" selected="selected">学校</option>
+						</select>
+					</div>
+					
+					
+					<script src="js/school.js"></script>
+
+
+
+					<div class="form-group input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text">学历</span>
+						</div>
+						<select  class="custom-select" name="xueli" >      
+							<option value="1">专科</option>  
+							<option value="2">本科</option>      
+							<option value="3">硕士</option>      
+							<option value="4">博士</option> 
+						</select>
+					</div>
+
+
+					
+					<div class="form-group input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text">专业</span>
+						</div>
+						<select  class="custom-select" name="major" >      
+							<option value="1">哲学</option>
+							<option value="2">经济学</option>
+							
+							<option value="4">历史学</option>
+							<option value="5">法学</option>
+							<option value="6">马克思主义理论</option>
+							<option value="7">社会学</option>
+							<option value="8">政治学</option>
+							<option value="9">公安学</option>
+							<option value="10">教育学</option>
+							<option value="11">体育学</option>
+							<option value="12">职业技术教育</option>
+							<option value="13">新闻传播学</option>
+							<option value="14">中国语言文学</option>
+							<option value="15">外国语言文学</option>
+							<option value="16">艺术</option>
+							<option value="17">数学</option>
+							<option value="18">物理学</option>
+							<option value="19">化学</option>
+							<option value="20">生物科学</option>
+							<option value="21">天文学</option>
+							<option value="22">地理科学</option>
+							<option value="23">地球物理学</option>
+							<option value="24">大气科学</option>
+							<option value="25">海洋科学</option>
+							<option value="26">力学</option>
+							<option value="27">农业工程</option>
+							<option value="28">环境科学</option>
+							<option value="29">心理学</option>
+							<option value="30">统计学</option>
+							<option value="31">系统科学</option>
+							<option value="32">地矿</option>
+							<option value="33">机械</option>
+							<option value="34">仪器仪表</option>
+							<option value="35">能源动力</option>
+							<option value="36">电气信息</option>
+							<option value="37">土建</option>
+							<option value="38">测绘</option>
+							<option value="39">环境与安全</option>
+							<option value="40">化工与制药</option>
+							<option value="41">交通运输</option>
+							<option value="42">海洋工程</option>
+							<option value="43">航空航天</option>
+							<option value="44">武器</option>
+							<option value="45">工程力学</option>
+							<option value="46">生物工程</option>
+							<option value="47">公安技术</option>
+							<option value="48">材料科学</option>
+							<option value="49">材料</option>
+							<option value="50">水利</option>
+							<option value="51">林业工程</option>
+							<option value="52">轻工纺织食品</option>
+							<option value="53">电子信息科学</option>
+							<option value="54">植物生产</option>
+							<option value="55">草业科学</option>
+							<option value="56">森林资源</option>
+							<option value="57">环境生态</option>
+							<option value="58">动物生产</option>
+							<option value="59">动物医学</option>
+							<option value="60">水产</option>
+							<option value="61">基础医学</option>
+							<option value="62">预防医学</option>
+							<option value="63">药学</option>
+							<option value="64">口腔医学</option>
+							<option value="65">中医学</option>
+							<option value="66">法医学</option>
+							<option value="67">护理学</option>
+							<option value="68">临床医学与医学技术</option>
+							<option value="69">工商管理</option>
+							<option value="70">管理科学与工程</option>
+							<option value="71">公共管理</option>
+							<option value="72">农业经济管理</option>
+							<option value="73">图书档案学</option>
+						</select>
+					</div>
+
+
+					<div class="form-group input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text">入学年份</span>
+						</div>
+						<select  class="custom-select" name="year" >      
+							<option value="2000">2000</option>
+							<option value="2001">2001</option>
+							<option value="2002">2002</option>
+							<option value="2003">2003</option>
+							<option value="2004">2004</option>
+							<option value="2005">2005</option>
+							<option value="2006">2006</option>
+							<option value="2007">2007</option>
+							<option value="2008">2008</option>
+							<option value="2009">2009</option>
+							<option value="2010">2010</option>
+							<option value="2011">2011</option>
+							<option value="2012">2012</option>
+							<option value="2013">2013</option>
+							<option value="2014">2014</option>
+							<option value="2015">2015</option>
+							<option value="2016">2016</option>
+							<option value="2017">2017</option>
+							<option value="2018">2018</option>
+							<option value="2019">2019</option>
+							<option value="2020">2020</option>
+							<option value="2021">2021</option>
+							<option value="2022">2022</option>
+							<option value="2023">2023</option>
+						</select>
+					</div>
+					<!--{hook user_create_password_after.htm}-->
+					<?php if($conf['user_create_email_on']) { ?>
+					<div class="media">
+						<div class="media-body">
+							<div class="form-group input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i class="icon icon-barcode icon-fw"></i></span>
+								</div>
+								<input type="text" class="form-control" placeholder="<?php echo lang('verify_code');?>" name="code" id="code">
+							</div>
+						</div>
+						<div class="align-self-center ml-1">
+							<button type="submit" class="btn btn-primary btn-sm ml-3 form-group" id="sendcode" data-loading-text="<?php echo lang('sending');?>..." action="<?php echo url('user-send_code-user_create');?>"><?php echo lang('send_verify_code');?></button>
+						</div>
+					</div>
+					<?php } ?>
+					
+					
+					<div class="form-group">
+						<button type="submit" class="btn btn-primary btn-block" id="submit" data-loading-text="<?php echo lang('submiting');?>..." <?php if($conf['user_create_email_on']) { ?>disabled<?php } ?>><?php echo lang('next_step');?></button>
+					</div>
+					<!--{hook user_create_submit_after.htm}-->
+					
+					<div class="media">
+						<div>
+							<!--{hook user_create_form_footer_left.htm}-->
+						</div>
+						<div class="media-body text-right">
+							<!--{hook user_create_form_footer_right_start.htm}-->
+							<a href="<?php echo url('user-login');?>" class="text-muted"><small><?php echo lang('user_login');?></small></a>
+							<?php if(!empty($conf['user_resetpw_on'])) { ?>
+							<a href="<?php echo url('user-resetpw');?>" class="text-muted ml-3"><small><?php echo lang('forgot_pw');?></small></a>
+							<?php } ?>
+							<!--{hook user_create_form_footer_right_end.htm}-->
+						</div>
+					</div>
+					
+				</form>
+			</div>
+		</div>
+		<!--{hook user_create_card_after.htm}-->
+	</div>
+</div>
+
+<!--{hook user_create_end.htm}-->
+
+<?php include _include(APP_PATH.'view/htm/footer.inc.htm');?>
+
+<script src="<?php echo $conf['view_url'];?>js/md5.js"></script>
+
+<script>
+var jform = $('#form');
+var jsubmit = $('#submit');
+var jsend = $('#sendcode');
+var referer = '<?php echo http_referer();?>';
+jsend.on('click', function() {
+	jform.reset();
+	jsend.button('loading');
+	var postdata = jform.serialize();
+	$.xpost(jsend.attr('action'), postdata, function(code, message) {
+		if(code == 0) {
+			$('#code').focus();
+			var t = 60; // 倒计时
+			jsend.button('<?php echo lang('user_send_sucessfully');?> 60 ');
+			jsubmit.button('reset');
+			// 倒计时，重新发送
+			var handler = setInterval(function() {
+				jsend.button('<?php echo lang('user_send_sucessfully');?> '+(--t)+' ');
+				if(t == 0) {
+					clearInterval(handler);
+					jsend.button('reset');
+				}
+			}, 1000);
+		} else if(code < 0) {
+			$.alert(message, -1);
+			jsend.button('reset');
+		} else {
+			jform.find('[name="'+code+'"]').alert(message).focus();
+			jsend.button('reset');
+		}
+	});
+	return false;
+});
+
+jform.on('submit', function() {
+	var postdata = jform.serializeObject();
+	jsubmit.button('loading');
+	//console.log(postdata);
+	postdata.password = $.md5(postdata.password);
+	$.xpost(jform.attr('action'), postdata, function(code, message) {
+		if(code == 0) {
+			jsubmit.button(message).delay(1000).location(referer);
+		} else if(xn.is_number(code)) {
+			alert(message);
+			jsubmit.button('reset');
+		} else {
+			jform.find('[name="'+code+'"]').alert(message).focus();
+			jsubmit.button('reset');
+		}
+	});
+	return false;
+});
+
+</script>
+
+<!--{hook user_create_js.htm}-->

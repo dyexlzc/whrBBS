@@ -1,0 +1,229 @@
+<?php include _include(APP_PATH.'view/htm/header.inc.htm');?>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="row-fluid">
+					<!-- 空白占位用 -->
+					<div class="span12">
+						<h3>
+
+						</h3>
+					</div>
+				</div>
+				<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+					<!--banner滚动展示-->
+					<ol class="carousel-indicators">
+						<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+					</ol>
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img class="d-block w-100" src="img/1.png" alt="First slide">
+						</div>
+						<div class="carousel-item">
+							<img class="d-block w-100" src="img/2.png" alt="Second slide">
+						</div>
+						<div class="carousel-item">
+							<img class="d-block w-100" src="img/3.png" alt="Third slide">
+						</div>
+					</div>
+					<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+			</div>
+			<div class="row-fluid">
+				<!-- 空白占位用 -->
+				<div class="span12">
+					<h3>
+
+					</h3>
+				</div>
+			</div>
+
+			<div class="row-fluid">
+				<!--搜索框-->
+				<form class="bs-example bs-example-form" role="form">
+					<div class="input-group mb-3">
+						<input id="text_for_major" type="text" class="form-control" placeholder="搜索专业或拼音查询" aria-label="Recipient's username" aria-describedby="basic-addon2">
+						<div class="input-group-append">
+							<button class="btn btn-outline-secondary" type="button" data-toggle="modal" data-target="#SearchModal">🔍</button>
+							<!--调用模态窗口打开函数-->
+							<button class="btn btn-outline-secondary" type="button" onclick="">高级搜索</button>
+						</div>
+					</div>
+				</form>
+				<div class="modal fade" id="SearchModal" tabindex="-1" role="dialog" aria-labelledby="SearchModalLabel" aria-hidden="true">
+					<!--接受弹出搜索而并非跳转-->
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+
+							<div class="modal-header">
+									<h3 id="modal-title"></h3>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+									</button>
+							</div>
+
+
+							<div class="modal-body">
+
+								<div class="form-group">
+									<p id="modal-body-1"></p>
+									<p id="s"></p>
+								</div>
+
+							</div>
+
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+								<button type="button" class="btn btn-primary">Save changes</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script>
+				var major;
+				var index_modal;
+				$('#text_for_major').bind('input propertychange', function () {
+					//$('#result').html($(this).val().length + ' characters');
+					console.log(major);
+					major = $(this).val();
+				})
+
+
+				function ajaxFunction() {
+					//该函数将页面的输入发送到后台，然后返回查询的结果
+					var xmlhttp;//定义一个xmlhttp变量
+					var raw_s;
+					try {
+						xmlhttp = new XMLHttpRequest();//一个XMLHttpRequest对象
+					} catch (e) {
+						try {
+							xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");//这个主要是针对ie浏览器低版本的
+						} catch (e) {
+							alert("你的游览器不支持");
+							return false;
+						}
+					}
+					//
+					//            如果readyState状态改变，那就会触发onreadystatechange事件
+					//            readyState的状态：
+					//            0: 请求未初始化
+					//            1: 服务器连接已建立
+					//            2: 请求已接收
+					//            3: 请求处理中
+					//            4: 请求已完成，且响应已就绪
+					xmlhttp.onreadystatechange = function () {
+						if (xmlhttp.readyState == 4) {
+							document.getElementById("s").innerHTML=xmlhttp.responseText;
+							//alert(major);
+						}
+					}
+					//拼接请求的url
+					var url = "?relative=" + major;
+					//准备请求
+					xmlhttp.open("GET", "index_search.php" + url, true);
+					//将请求发送到服务器
+					xmlhttp.send();
+					//alert(major);
+				}
+
+
+				$('#SearchModal').on('show.bs.modal', function (event) {
+					var button = $(event.relatedTarget) // Button that triggered the modal
+					var recipient = button.data('whatever') // Extract info from data-* attributes
+					index_modal = $(this)
+					//console.log($(" input[ name='test' ] ").val())
+					if (major == undefined || major == "") {
+						//index_modal.find('.modal-title').text("忘记输入啦")
+						//index_modal.find('.modal-body').text("请输入需要查找的信息~")
+						document.getElementById("modal-title").innerHTML="忘记输入啦"
+						document.getElementById("modal-body-1").innerText="请输入需要查找的标签~"
+						document.getElementById("s").innerText="";
+					}
+					else {
+						document.getElementById("modal-title").innerText="提示"
+						document.getElementById("modal-body-1").innerText="为您查找到以下相关用户:"
+						ajaxFunction()
+
+					}
+
+					//modal.find('.modal-title').text('New message to ' + recipient)
+
+				})
+			</script>
+			<div class="col-12 column">
+				<!--推荐搜索专业-->
+				<div class="row clearfix">
+					<div class="col-8 column">
+						<h5>大家都在找`</h5>
+					</div>
+					<div class="col-4 column">
+						<button type="button" class="btn btn-secondary">换一批💨</button>
+					</div>
+				</div>
+				<br>
+				<div class="row clearfix">
+					<div class="col-6 column" class="mx-auto">
+						<a href="#">#环境设计</a>
+					</div>
+					<div class="col-6 column" class="mx-auto">
+						<a href="#">#产品设计</a>
+					</div>
+				</div>
+				<br>
+
+
+				<div class="row clearfix">
+					<div class="col-6 column">
+						<a href="#">#服装设计</a>
+					</div>
+					<div class="col-6 column">
+						<a href="#">#视觉传达</a>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div class="row clearfix">
+				<!--展示热门用户-->
+				<div class="col-md-12 column">
+					<?
+							function random_color(){
+								$i=rand(0,3);
+								//echo $i;
+								switch($i)
+								{
+									case 0:
+										return 'card text-white bg-secondary mb-3';
+									case 1:
+										return 'card text-white bg-info mb-3';
+									case 2:
+										return 'card bg-light mb-3';
+									case 3:
+										return 'card text-white bg-dark mb-3';
+								}
+							}
+							for($i=0;$i<20;$i++)
+							{
+								echo '<div class="'.random_color().'" >'.
+										'<div class="card-header">Header</div>'.
+											'<div class="card-body">'.
+												'<h5 class="card-title">Secondary card title</h5>'.
+												'<p class="card-text">'.(string)$i.'</p>'.
+											'</div>'.
+									'</div>';
+							}
+						?>
+				</div>
+			</div>
+		</div>
+	</div>
+<?php include _include(APP_PATH.'view/htm/footer.inc.htm');?>

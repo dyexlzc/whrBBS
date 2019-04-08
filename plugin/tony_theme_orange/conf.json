@@ -1,0 +1,14 @@
+{
+    "name": "Tony 主题",
+    "brief": "Tony 橙色主题,带回到顶部功能。效果预览<a href='http://bbs.abmbio.xin'>http://bbs.abmbio.xin</a>,<a href='https://www.abmbio.xin'>关于作者</a>",
+    "version": "1.0",
+    "bbs_version": "4.0",
+    "installed": 0,
+    "enable": 0,
+    "hooks_rank": [
+
+    ],
+    "dependencies": [
+
+    ]
+}

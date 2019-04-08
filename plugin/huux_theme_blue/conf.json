@@ -1,0 +1,14 @@
+{
+    "name": "原版蓝风格",
+    "brief": "使用bootstrap原版颜色更亮丽，默认蓝色，保护视力利于阅读<br />(FOR 4.0 正式版)",
+    "version": "1.0",
+    "bbs_version": "4.0.3",
+    "installed": 0,
+    "enable": 0,
+    "hooks_rank": [
+
+    ],
+    "dependencies": [
+
+    ]
+}

@@ -1,0 +1,90 @@
+<?php if($threadlist) { foreach($threadlist as $_thread) { ?>
+<li class="thread <?php echo $_thread['top_class'];?>" tid="<?php echo $_thread['tid'];?>">
+    <div class="DiscussionListItem">
+        <?php if(forum_access_mod($_thread['fid'], $gid, 'allowtop')) { ?>
+        <div class="DiscussionListItem-controls itemCount1">
+            <input type="checkbox" name="modtid" value="<?php echo $_thread['tid']; ?>">
+        </div>
+        <?php } ?>
+        <div class="DiscussionListItem-content Slidable-content subject">
+            <a href="<?php echo url("user-$_thread[uid]");?>" class="DiscussionListItem-author" title="">
+                <img class="Avatar lazy" data-original="<?php echo $_thread['user_avatar_url'];?>">
+            </a>
+
+            <?php if($_thread['top'] || $_thread['closed']) { ?>
+            <ul class="DiscussionListItem-badges badges">
+                <?php if($_thread['closed'] == 1) { ?>
+                <li class="item-locked">
+                    <span class="Badge Badge--locked" title="帖子已关闭">
+                        <i class="icon fa fa-fw fa-lock Badge-icon">
+                        </i>
+                    </span>
+                </li><?php } ?><?php if($_thread['top'] ==3) { ?><li class="item-sticky">
+                    <span class="Badge Badge--sticky" title="全站置顶">
+                        <i class="icon fa fa-fw fa-thumb-tack Badge-icon">
+                        </i>
+                    </span>
+                </li><?php } ?><?php if($_thread['top'] ==1) { ?><li class="item-sticky">
+                    <span class="Badge Badge--sticky--1" title="版块置顶">
+                        <i class="icon fa fa-fw fa-map-marker Badge-icon">
+                        </i>
+                    </span>
+                </li>
+                <?php } ?>
+            </ul>
+            <?php } ?>
+
+            <a class="DiscussionListItem-main" href="<?php echo url("thread-$_thread[tid]");?>">
+                <h3 class="DiscussionListItem-title">
+                    <?php echo $_thread['subject'];?>
+                </h3>
+            <?php if($_thread['digest'] > 0) { ?>
+                <i class="fa fa-fw fa-diamond f15 text-muted"></i>
+            <?php } ?>
+            <?php if($_thread['files'] > 0) { ?>
+                <i class="fa fa-fw fa-paperclip f15 text-muted"></i>
+            <?php } ?>
+                <ul class="DiscussionListItem-info">
+                    <li class="item-tags">
+                        <?php if(!$fid) { ?>
+                        <span class="TagsLabel nav-<?php echo $_thread['fid']; ?>">
+                            <span class="TagLabel colored">
+                                <span class="TagLabel-text">
+                                    <?php echo $_thread['forumname'];?>
+                                </span>
+                            </span><?php if(!empty($_thread['taglist'])) { foreach($_thread['taglist'] as $tag) { ?><span class="TagLabel colored tag-id"><?php echo $tag['name'];?></span>
+                            <?php  }} ?>
+                        </span>
+                        <?php } ?>
+                    </li>
+                    <li class="item-terminalPost">
+                        <span>
+                            <?php if($_thread['posts'] == 0) { ?>
+                            <span class="username">
+                                <?php echo $_thread['username'];?>
+                            </span>
+                            <span class="time">
+                                <?php echo $_thread['create_date_fmt'];?>
+                            </span>
+                            <?php } else { ?>
+                            <i class="icon fa fa-fw fa-reply ">
+                            </i>
+                            <span class="username">
+                                <?php echo $_thread['lastusername'];?>
+                            </span>
+                            <span class="time">
+                                <?php echo $_thread['last_date_fmt']; ?>
+                            </span>
+                            <?php } ?>
+                        </span>
+                    </li>
+                </ul>
+            </a>
+            <span class="DiscussionListItem-count" title="">
+                <?php echo $_thread['posts'];?>
+            </span>
+        </div>
+    </div>
+</li>
+<?php }} ?>
+<!-- {hook thread_list_inc_start.htm} -->

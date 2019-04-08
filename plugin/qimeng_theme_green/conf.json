@@ -1,0 +1,14 @@
+{
+    "name": "奇梦主题：青绿色调模版",
+    "brief": "奇梦自定义CSS3、SASS主题模版；前台+后台统一色调；宽屏版块+详情页（官网：<a href='https://www.qimeng.tv' target='_blank'>www.qimeng.tv</a>）",
+    "version": "1.0",
+    "bbs_version": "4.0",
+    "installed": 0,
+    "enable": 0,
+    "hooks_rank": [
+
+    ],
+    "dependencies": [
+
+    ]
+}

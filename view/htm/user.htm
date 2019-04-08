@@ -1,0 +1,140 @@
+<template include="./view/htm/user.template.htm">
+	<slot name="user_body">
+		<div class="row line-height-4">
+			<div class="col-md-2 col-sm-12 text-center">
+				<img class="logo-4" src="<?php echo $_user['avatar_url'];?>">
+				<br><b><?php echo $_user['username'];?> </b>
+				<!--{hook user_profile_username_after.htm}-->
+			</div>
+			<div class="col-4 col-sm-5">
+				<span class="text-muted"><?php echo lang('threads');?>：</span><?php echo $_user['threads'];?>
+				<br><span class="text-muted"><?php echo lang('posts');?>：</span><?php echo $_user['posts'];?>
+				<!--{hook user_profile_posts_after.htm}-->
+			</div>
+			<div class="col-auto">
+				<span class="text-muted"><?php echo lang('user_group');?>：</span><?php echo $_user['groupname'];?>
+				<br><span class="text-muted"><?php echo lang('create_date');?>：</span><?php echo $_user['create_date_fmt'];?>
+				<br><span class="text-muted"><?php echo lang('last_login_date');?>：</span><?php echo $_user['login_date_fmt'];?>
+				<?php if($gid == 1) { ?>
+				<br><span class="text-danger"><?php echo lang('email');?>：</span><?php echo $_user['email'];?><br>
+				<?php } ?>
+				<?php if(!empty($uid)) { //如果是用户处于登录状态，则展示详细信息?> 
+					<span class="text-danger">性别：</span>
+				<?php 
+					if($_user['sex']=="1")
+						echo "男";  
+					else
+						echo "女";
+				?>
+				<br><span class="text-danger">学校：</span><?php echo $_user['school'];?>
+				<br><span class="text-danger">姓名：</span><?php echo $_user['realname'];?>
+				<br><span class="text-danger">学历：</span>
+				<?php 
+				
+				if($_user['xueli']=="1") echo "专科";
+				elseif($_user['xueli']=="2") echo "本科";
+				elseif($_user['xueli']=="3") echo "硕士";
+				elseif($_user['xueli']=="4") echo "博士";
+
+				?>
+				<br><span class="text-danger">专业：</span>
+				<?php 
+				
+				if($_user['major']=="1") echo "哲学";
+				elseif($_user['major']=="2") echo "经济学";
+				elseif($_user['major']=="3") echo "历史学";
+				elseif($_user['major']=="4") echo "历史学";
+				elseif($_user['major']=="5") echo "法学";
+				elseif($_user['major']=="6") echo "马克思主义理论";
+				elseif($_user['major']=="7") echo "社会学";
+				elseif($_user['major']=="8") echo "政治学";
+				elseif($_user['major']=="9") echo "公安学";
+				elseif($_user['major']=="10") echo "教育学";
+				elseif($_user['major']=="11") echo "体育学";
+				elseif($_user['major']=="12") echo "职业技术教育";
+				elseif($_user['major']=="13") echo "新闻传播学";
+				elseif($_user['major']=="14") echo "中国语言文学";
+				elseif($_user['major']=="15") echo "外国语言文学";
+				elseif($_user['major']=="16") echo "艺术";
+				elseif($_user['major']=="17") echo "数学";
+				elseif($_user['major']=="18") echo "物理学";
+				elseif($_user['major']=="19") echo "化学";
+				elseif($_user['major']=="20") echo "生物科学";
+				elseif($_user['major']=="21") echo "天文学";
+				elseif($_user['major']=="22") echo "地理科学";
+				elseif($_user['major']=="23") echo "地球物理学";
+				elseif($_user['major']=="24") echo "大气科学";
+				elseif($_user['major']=="25") echo "海洋科学";
+				elseif($_user['major']=="26") echo "力学";
+				elseif($_user['major']=="27") echo "农业工程";
+				elseif($_user['major']=="28") echo "环境科学";
+				elseif($_user['major']=="29") echo "心理学";
+				elseif($_user['major']=="30") echo "统计学";
+				elseif($_user['major']=="31") echo "系统科学";
+				elseif($_user['major']=="32") echo "地矿";
+				elseif($_user['major']=="33") echo "机械";
+				elseif($_user['major']=="34") echo "仪器仪表";
+				elseif($_user['major']=="35") echo "能源动力";
+				elseif($_user['major']=="36") echo "电气信息";
+				elseif($_user['major']=="37") echo "土建";
+				elseif($_user['major']=="38") echo "测绘";
+				elseif($_user['major']=="39") echo "环境与安全";
+				elseif($_user['major']=="40") echo "化工与制药";
+				elseif($_user['major']=="41") echo "交通运输";
+				elseif($_user['major']=="42") echo "海洋工程";
+				elseif($_user['major']=="43") echo "航空航天";
+				elseif($_user['major']=="44") echo "武器";
+				elseif($_user['major']=="45") echo "工程力学";
+				elseif($_user['major']=="46") echo "生物工程";
+				elseif($_user['major']=="47") echo "公安技术";
+				elseif($_user['major']=="48") echo "材料科学";
+				elseif($_user['major']=="49") echo "材料";
+				elseif($_user['major']=="50") echo "水利";
+				elseif($_user['major']=="51") echo "林业工程";
+				elseif($_user['major']=="52") echo "轻工纺织食品";
+				elseif($_user['major']=="53") echo "电子信息科学";
+				elseif($_user['major']=="54") echo "植物生产";
+				elseif($_user['major']=="55") echo "草业科学";
+				elseif($_user['major']=="56") echo "森林资源";
+				elseif($_user['major']=="57") echo "环境生态";
+				elseif($_user['major']=="58") echo "动物生产";
+				elseif($_user['major']=="59") echo "动物医学";
+				elseif($_user['major']=="60") echo "水产";
+				elseif($_user['major']=="61") echo "基础医学";
+				elseif($_user['major']=="62") echo "预防医学";
+				elseif($_user['major']=="63") echo "药学";
+				elseif($_user['major']=="64") echo "口腔医学";
+				elseif($_user['major']=="65") echo "中医学";
+				elseif($_user['major']=="66") echo "法医学";
+				elseif($_user['major']=="67") echo "护理学";
+				elseif($_user['major']=="68") echo "临床医学与医学技术";
+				elseif($_user['major']=="69") echo "工商管理";
+				elseif($_user['major']=="70") echo "管理科学与工程";
+				elseif($_user['major']=="71") echo "公共管理";
+				elseif($_user['major']=="72") echo "农业经济管理";
+				elseif($_user['major']=="73") echo "图书档案学";
+
+
+				
+				?>
+				<br><span class="text-danger">入学年份：</span><?php echo $_user['year'];?>
+				<br><span class="text-danger">队友宣言：</span><?php echo $_user['other'];?>
+
+
+				<? }?>
+				<!--{hook user_profile_login_date_after.htm}-->
+			</div>
+		</div>
+		
+		<?php if(!empty($group['allowdeleteuser'])) { ?>
+			<a role="button" class="btn btn-danger confirm btn-block my-3" data-confirm-text="<?php echo lang('confirm_delete_user');?>" data-method="post" href="<?php echo url("mod-deleteuser-$_user[uid]");?>"><?php echo lang('delete_user');?></a>
+		<?php } ?>
+		
+		<!--{hook user_index_delete_user_button_after.htm}-->
+		
+	</slot>
+</template>
+
+<script>
+$('a[data-active="user-profile"]').addClass('active');
+</script>

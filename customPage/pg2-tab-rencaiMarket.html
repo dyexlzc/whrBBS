@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>AUI快速完成布局</title>
+    <link rel="stylesheet" type="text/css" href="aui/css/aui.css" />
+    <script type="text/javascript" src="aui/script/api.js" ></script>
+    <script type="text/javascript" src="aui/script/aui-tab.js" ></script>
+</head>
+<body>
+    <div class="aui-tab" id="tab">
+        <div class="aui-tab-item aui-active">队友推荐</div>
+    </div>
+    <iframe id="iframepage2" src="http://whrhost.tk/whr/bbs/custompage/pg2-child-market.html" frameborder="0" width="100%" onLoad="iFrameHeight2()"></iframe>
+    <script type="text/javascript">
+    apiready = function(){
+        api.parseTapmode();
+    }
+    var tab = new auiTab({
+        element:document.getElementById("tab"),
+    },function(ret){
+        console.log(ret)
+    });
+    function iFrameHeight2() {
+            var ifm = document.getElementById("iframepage2");
+            var subWeb = document.frames ? document.frames["iframepage2"].document : ifm.contentDocument;
+            if (ifm != null && subWeb != null) {
+                ifm.height = subWeb.body.scrollHeight;
+            }
+        }
+</script>
+</body>
+
+
+</html>

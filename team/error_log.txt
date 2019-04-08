@@ -1,0 +1,18 @@
+[23-Dec-2018 14:07:32 Asia/Brunei] PHP Notice:  Undefined index: username in D:\host\dyexlzc\web\whr\bbs\team\mine.php on line 94
+[23-Dec-2018 14:07:32 Asia/Brunei] PHP Notice:  Uninitialized string offset: 0 in D:\host\dyexlzc\web\whr\bbs\team\mine.php on line 68
+[23-Dec-2018 14:07:32 Asia/Brunei] PHP Warning:  strpos(): Empty needle in D:\host\dyexlzc\web\whr\bbs\team\mine.php on line 69
+[13-Jan-2019 19:26:09 Asia/Brunei] PHP Notice:  Undefined index: username in D:\host\dyexlzc\web\whr\bbs\team\mine.php on line 95
+[13-Jan-2019 19:26:09 Asia/Brunei] PHP Notice:  Uninitialized string offset: 0 in D:\host\dyexlzc\web\whr\bbs\team\mine.php on line 68
+[13-Jan-2019 19:26:09 Asia/Brunei] PHP Warning:  strpos(): Empty needle in D:\host\dyexlzc\web\whr\bbs\team\mine.php on line 69
+[24-Mar-2019 21:57:29 Asia/Brunei] PHP Notice:  Undefined index: username in D:\host\dyexlzc\web\whr\bbs\team\mine.php on line 95
+[24-Mar-2019 21:57:29 Asia/Brunei] PHP Notice:  Uninitialized string offset: 0 in D:\host\dyexlzc\web\whr\bbs\team\mine.php on line 68
+[24-Mar-2019 21:57:29 Asia/Brunei] PHP Warning:  strpos(): Empty needle in D:\host\dyexlzc\web\whr\bbs\team\mine.php on line 69
+[24-Mar-2019 21:57:29 Asia/Brunei] PHP Notice:  Undefined index: username in D:\host\dyexlzc\web\whr\bbs\team\mine.php on line 95
+[24-Mar-2019 21:57:29 Asia/Brunei] PHP Notice:  Uninitialized string offset: 0 in D:\host\dyexlzc\web\whr\bbs\team\mine.php on line 68
+[24-Mar-2019 21:57:29 Asia/Brunei] PHP Warning:  strpos(): Empty needle in D:\host\dyexlzc\web\whr\bbs\team\mine.php on line 69
+[24-Mar-2019 21:58:29 Asia/Brunei] PHP Notice:  Undefined index: username in D:\host\dyexlzc\web\whr\bbs\team\mine.php on line 95
+[24-Mar-2019 21:58:29 Asia/Brunei] PHP Notice:  Uninitialized string offset: 0 in D:\host\dyexlzc\web\whr\bbs\team\mine.php on line 68
+[24-Mar-2019 21:58:29 Asia/Brunei] PHP Warning:  strpos(): Empty needle in D:\host\dyexlzc\web\whr\bbs\team\mine.php on line 69
+[29-Mar-2019 19:53:10 Asia/Brunei] PHP Notice:  Undefined index: username in D:\host\dyexlzc\web\whr\bbs\team\mine.php on line 95
+[29-Mar-2019 19:53:10 Asia/Brunei] PHP Notice:  Uninitialized string offset: 0 in D:\host\dyexlzc\web\whr\bbs\team\mine.php on line 68
+[29-Mar-2019 19:53:10 Asia/Brunei] PHP Warning:  strpos(): Empty needle in D:\host\dyexlzc\web\whr\bbs\team\mine.php on line 69

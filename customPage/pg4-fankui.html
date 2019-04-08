@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>反馈中心</title>
+        <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+        <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+        <link rel="stylesheet" type="text/css" href="aui/css/aui.css" />
+        <script src="../view/js/jquery-3.1.0.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" src="aui/script/api.js"></script>
+        <script type="text/javascript" src="aui/script/aui-tab.js"></script>
+        <script type="text/javascript" src="aui/script/aui-toast.js" ></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    </head>
+    
+    <body>
+        
+        <div class="aui-content aui-margin-b-15">
+        <ul class="aui-list aui-form-list" id="content">
+            <li class="aui-list-header">需要反馈什么，跟我们说吧~</li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-label">
+                        反馈项目
+                    </div>
+                    <div class="aui-list-item-input">
+                        <select >
+                            <option>论坛内容</option>
+                            <option>功能建议</option>
+                            <option>运营管理</option>
+                        </select>
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item" >
+                <div class="aui-list-item-inner" style="padding-right:10px">
+                    <div class="aui-list-item-label">
+                        具体内容
+                    </div>
+                    <div class="aui-list-item-input" style="height:300px;border:1px solid #5B5360;">
+                        <textarea placeholder="在这里输入您对我们的建议吧~！" rows="10"></textarea>
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner aui-list-item-center aui-list-item-btn">
+                    <div class="aui-btn aui-btn-info aui-margin-r-5" @click="onSubmit_">提交建议</div>
+                    <!--<div class="aui-btn aui-btn-danger aui-margin-l-5">取消</div>-->
+                </div>
+            </li>
+        </ul>
+    </div>
+    <script>
+    var toast = new auiToast();
+        var vm1=new Vue({
+            el:"#content",
+            data:{
+                
+            },
+            methods:{
+                onSubmit_:function(){
+                    toast.success({
+                        title:"小二收到您的反馈了！努力变得更好！谢谢！",
+                        duration:2000
+                    });
+                }
+            }
+        })
+    </script>
+    </body>
+</html>

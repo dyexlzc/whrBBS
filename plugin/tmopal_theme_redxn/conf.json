@@ -1,0 +1,14 @@
+{
+    "name": "RedXN 简约灰白红模板",
+    "brief": "# QQ交流群: <span style='color:#177f2e;'>66706260</span><br># 使用问题、交流 <a href='http://www.tmopal.com'  target='_blank'><span style='color:red;'><b>www.tmopal.com</b></span>",
+    "version": "1.0.0",
+    "bbs_version": "4.0",
+    "installed": 0,
+    "enable": 0,
+    "hooks_rank": [
+
+    ],
+    "dependencies": [
+
+    ]
+}

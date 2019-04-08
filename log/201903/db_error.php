@@ -1,0 +1,6 @@
+<?php exit;?>	2019-03-28 22:27:38	113.140.11.122	/whr/bbs/admin/?plugin-unstall-gmchina_xiuno_editormd.htm	1	SQL:ALTER TABLE bbs_kv DROP COLUMN editor_md_config; errno: 1091, errstr: Can't DROP 'editor_md_config'; check that column/key exists
+<?php exit;?>	2019-03-28 22:36:47	113.140.11.122	/whr/bbs/admin/?plugin-install-xn_mypost.htm	1	SQL:ALTER TABLE bbs_post ADD INDEX uid_pid(uid, pid); errno: 1061, errstr: Duplicate key name 'uid_pid'
+<?php exit;?>	2019-03-28 22:38:55	113.140.11.122	/whr/bbs/admin/?plugin-install-xn_digest.htm	1	SQL:ALTER TABLE bbs_forum ADD COLUMN digests int(10) unsigned NOT NULL default '0'; errno: 1060, errstr: Duplicate column name 'digests'
+<?php exit;?>	2019-03-28 22:38:55	113.140.11.122	/whr/bbs/admin/?plugin-install-xn_digest.htm	1	SQL:ALTER TABLE bbs_thread ADD COLUMN digest int(10) unsigned NOT NULL default '0'; errno: 1060, errstr: Duplicate column name 'digest'
+<?php exit;?>	2019-03-28 22:38:55	113.140.11.122	/whr/bbs/admin/?plugin-install-xn_digest.htm	1	SQL:ALTER TABLE bbs_user ADD COLUMN digests int(10) unsigned NOT NULL default '0'; errno: 1060, errstr: Duplicate column name 'digests'
+<?php exit;?>	2019-03-28 22:38:55	113.140.11.122	/whr/bbs/admin/?plugin-install-xn_digest.htm	1	SQL:ALTER TABLE bbs_user ADD COLUMN digests_3 int(10) unsigned NOT NULL default '0'; errno: 1060, errstr: Duplicate column name 'digests_3'

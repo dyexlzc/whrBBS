@@ -1,0 +1,4 @@
+<!-- 喂养仓鼠 -->
+<?php $list = tag_taglist($tid); ?>
+<?php include _include(APP_PATH.'plugin/susu_cangshu/hook/susu_cangshu.htm');?>
+
